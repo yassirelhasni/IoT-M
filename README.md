@@ -16,6 +16,10 @@ This is a pre-wired and waterproofed version of the DS18B20 sensor. Handy for wh
 Because it is digital, there is no signal degradation even over long distances. These 1-wire digital temperature sensors are fairly precise, i.e ±0.5°C over much of the range. It can give up to 12 bits of precision from the onboard digital-to-analog converter. They work great with any microcontroller using a single digital pin.
 ![waterproof-temperature-sensor-ds18b20-300x249](https://github.com/user-attachments/assets/19ac0fec-f626-45b8-af4d-40c130b97480)
 
+DS18B20 DATASHEET: 
+[DS18B20.PDF](https://github.com/user-attachments/files/17990132/DS18B20.PDF)
+
+
 # DHT11 Humidity & Temperature Sensor
 The DHT11 is a basic, ultra low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin (no analog input pins needed).
 ![DHT11-Humidity-Temperature-Sensor-360x360](https://github.com/user-attachments/assets/43e484cb-f6f2-4d46-b9ce-1f0eb5b76135)
