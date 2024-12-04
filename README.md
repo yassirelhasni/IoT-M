@@ -82,9 +82,13 @@ sudo systemctl restart mosquitto
 Exemple of MQTT configuration:
 
 #define MQTT_SERVER "192.168.1.100" // Raspberry Pi IP address
+
 #define MQTT_PORT 1883
 
 #define MQTT_TOPIC_HR "/heartRate"
+
 #define MQTT_TOPIC_TEMP "/tempValue"
+
 #define MQTT_TOPIC_HUM "/humValue"
+
 #define MQTT_TOPIC_DS18B20 "/ds18b20Temp"
