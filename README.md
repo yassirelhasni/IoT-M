@@ -79,8 +79,10 @@ Restart Mosquitto:
 
 sudo systemctl restart mosquitto
 
-Exemple of MQTT configuration:
+## Exemple of MQTT configuration:
+Run the following code to start the server:
 
+```bash
 #define MQTT_SERVER "192.168.1.100" // Raspberry Pi IP address
 
 #define MQTT_PORT 1883
@@ -93,8 +95,3 @@ Exemple of MQTT configuration:
 
 #define MQTT_TOPIC_DS18B20 "/ds18b20Temp"
 
-## Usage
-Run the following code to start the server:
-
-```bash
-python server.py
