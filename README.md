@@ -35,8 +35,56 @@ Now let us begin with the designing of IoT Based Patient Health Monitoring on ES
 # IoT-M Mobile App
 
 Similarly you can also view the Patient Health Status on Mobile Phone.
+
 ![WhatsApp Image 2024-12-03 at 20 06 43](https://github.com/user-attachments/assets/a71e619d-804f-4cb9-a5f8-8c085cd83671)
 
-# ...
+# The MQTT Protocole
 
+MQTT (originally an initialism of MQ Telemetry Transport[a]) is a lightweight, publish-subscribe, machine to machine network protocol for message queue/message queuing service. It is designed for connections with remote locations that have devices with resource constraints or limited network bandwidth, such as in the Internet of Things (IoT). It must run over a transport protocol that provides ordered, lossless, bi-directional connections—typically, TCP/IP.[1] It is an open OASIS standard and an ISO recommendation (ISO/IEC 20922).
 
+![Mqtt-hor svg](https://github.com/user-attachments/assets/deaf2fbd-a002-443e-a25f-5b44893bb10c)
+
+ # Raspberry Pi as a Gateway Between ESP32 and the Cloud
+
+![images](https://github.com/user-attachments/assets/90b61e9c-1155-40a7-a6d0-e406c5e066b7)
+
+In this setup, the Raspberry Pi acts as a gateway to relay data from the ESP32 to a cloud server and vice versa
+
+ESP32:
+Publishes sensor data to the Raspberry Pi.
+Subscribes to topics for receiving control commands or updates.
+
+Raspberry Pi:
+Acts as a local MQTT broker for ESP32 communication.
+Forwards data to a cloud MQTT broker or cloud service (e.g., AWS IoT, Google Cloud IoT, or Azure IoT Hub).
+
+Cloud:
+Processes, stores, and visualizes the data.
+
+# Set Up the Raspberry Pi as a Local Gateway
+Install Mosquitto for local MQTT communication:
+
+sudo apt update
+sudo apt install mosquitto mosquitto-clients
+
+Allow local and remote access in the Mosquitto configuration:
+
+sudo nano /etc/mosquitto/mosquitto.conf
+Add:
+
+listener 1883
+allow_anonymous true
+
+Restart Mosquitto:
+
+sudo systemctl restart mosquitto
+
+Exemple of MQTT configuration:
+
+#define MQTT_SERVER "192.168.1.100" // Raspberry Pi IP address
+#define MQTT_PORT 1883
+
+#define MQTT_TOPIC_HR "/heartRate"
+#define MQTT_TOPIC_TEMP "/tempValue"
+#define MQTT_TOPIC_HUM "/humValue"
+#define MQTT_TOPIC_DS18B20 "/ds18b20Temp"
