@@ -92,3 +92,9 @@ Exemple of MQTT configuration:
 #define MQTT_TOPIC_HUM "/humValue"
 
 #define MQTT_TOPIC_DS18B20 "/ds18b20Temp"
+
+## Usage
+Run the following code to start the server:
+
+```bash
+python server.py
