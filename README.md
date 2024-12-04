@@ -64,24 +64,24 @@ Processes, stores, and visualizes the data.
 # Set Up the Raspberry Pi as a Local Gateway
 ### Install Mosquitto for local MQTT communication:
 
-    ```bash
+    
     sudo apt update
     sudo apt install mosquitto mosquitto-clients
 
 ### Allow local and remote access in the Mosquitto configuration:
 
-    ```bash
+    
     sudo nano /etc/mosquitto/mosquitto.conf
 
 ### Add:
 
-    ```bash
+    
     listener 1883
     allow_anonymous true
 
 ### Restart Mosquitto:
 
-    ```bash
+    
     sudo systemctl restart mosquitto
 
 ## Exemple of MQTT configuration:
